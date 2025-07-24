@@ -12,3 +12,14 @@ let getJohnProfile = () => {
   });
 };
 // Start coding here
+async function showJohnProfile() {
+  try {
+    const profile = await getJohnProfile(); // รอ Promise
+    console.log(profile); // จะไม่ทำงานเพราะ promise ถูก reject
+  } catch (error) {
+    console.log(error); // แสดงผลข้อมูลจาก reject
+  }
+}
+
+// เรียกใช้ฟังก์ชัน
+showJohnProfile();

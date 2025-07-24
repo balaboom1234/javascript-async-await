@@ -33,3 +33,14 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+async function showData() {
+  try {
+    const profileData = await getJohnProfile();
+    console.log(profileData);
+    
+    const ordersData = await getJohnOrders();
+    console.log(ordersData);
+  } catch (error) {
+    console.error("เกิดข้อผิดพลาด:", error);
+  }
+}

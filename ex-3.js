@@ -33,3 +33,11 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+getJohnProfile()
+  .then(profileData => {
+    console.log(profileData);
+    return getJohnOrders();  // ส่ง Promise ของ getJohnOrders ให้ .then ตัวถัดไปรอ
+  })
+  .then(ordersData => {
+    console.log(ordersData);
+  });
